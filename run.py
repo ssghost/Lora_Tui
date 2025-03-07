@@ -19,8 +19,11 @@ async def main():
     image_json = await json.loads(subprocess.run(f"{curl_command}", capture_output=True, text=True).stdout)
     image_url = image_json["image"]
     image_data = await requests.get(image_url).content
-    with open('image.jpg', 'wb') as handler:
+    with open("image.jpg", 'wb') as handler:
         handler.write(image_data)
+    if os.path.isfile("image.jpg"):
+        print("Generated image downloaded at ./image.jpg.")
 
 if __name__ == "__main__":
     asyncio.run(main)
+     

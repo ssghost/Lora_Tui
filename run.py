@@ -7,7 +7,7 @@ import asyncio
 
 async def main():
     prompt = str(input("Enter the prompt:"))
-    await subprocess.run(f"beam serve app.py:generate({prompt}) > output.txt", shell=True)
+    await subprocess.run(f"beam serve app.py:generate(prompt={prompt}) > output.txt", shell=True)
 
     with open("output.txt", 'r') as f:
         lines = f.readlines()

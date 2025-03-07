@@ -1,2 +1,2 @@
 # Lora_Tui
-### Usage: $> `python run.py`
+### Usage: `$> python run.py`

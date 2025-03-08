@@ -9,7 +9,7 @@ import asyncio
 
 async def main():
     prompt = str(input("Enter the prompt:"))
-    proc = subprocess.run(f"beam serve app.py:generate(prompt={prompt}) > output.txt", shell=True)
+    proc = subprocess.Popen(f"beam serve app.py:generate(prompt={prompt}) > output.txt", start_new_session=True)
     time.sleep(10)
 
     with open("output.txt", 'r') as f:

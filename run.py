@@ -30,5 +30,5 @@ async def main():
     os.killpg(os.getpgid(proc), signal.SIGTERM)
 
 if __name__ == "__main__":
-    asyncio.run(main)
+    asyncio.run(main())
      

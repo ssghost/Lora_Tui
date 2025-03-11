@@ -1,4 +1,5 @@
 from beam import Image, Volume, endpoint, Output, env
+from run import prompt
 
 if env.is_remote():
     from diffusers import StableDiffusionXLPipeline, EulerAncestralDiscreteScheduler
@@ -58,7 +59,7 @@ def load_models():
     gpu="A100-40",
     volumes=[Volume(name="models", mount_path=CACHE_PATH)],
 )
-def generate(context, prompt=globals()["prompt"]):
+def generate(context, prompt=prompt):
     pipe = context.on_start_value
 
     pipe.enable_sequential_cpu_offload()

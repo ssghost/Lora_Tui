@@ -8,6 +8,7 @@ import requests
 import asyncio
 
 async def main():
+    global prompt
     prompt = str(input("Enter the prompt:"))
     proc = subprocess.run(f"beam serve app.py:generate(prompt={prompt}) > output.txt", shell=True)
     time.sleep(10)

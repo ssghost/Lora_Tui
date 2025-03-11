@@ -58,7 +58,7 @@ def load_models():
     gpu="A100-40",
     volumes=[Volume(name="models", mount_path=CACHE_PATH)],
 )
-def generate(context, prompt):
+def generate(context, prompt=prompt):
     pipe = context.on_start_value
 
     pipe.enable_sequential_cpu_offload()

@@ -69,7 +69,6 @@ def generate(context, prompt):
     pipe.load_lora_weights(
         LORA_REPO, weight_name=LORA_WEIGHT_NAME, adapter_name=adapter_name
     )
-
     pipe.set_adapters([adapter_name], adapter_weights=[2.0])
 
     image = pipe(
@@ -82,6 +81,5 @@ def generate(context, prompt):
     ).images[0]
 
     output = Output.from_pil_image(image).save()
-
     url = output.public_url()
     return {"image": url}

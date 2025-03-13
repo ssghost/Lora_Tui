@@ -114,3 +114,50 @@ on_start func complete, took: 28.409268379211426s
 [2025-03-13 03:34:34 +0000] [159] [INFO] Started server process [159]
 [2025-03-13 03:34:34 +0000] [159] [INFO] Waiting for application startup.
 [2025-03-13 03:34:34 +0000] [159] [INFO] Application startup complete.
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/objects/bb/tmp_obj_ea6mDp'
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/objects/57/tmp_obj_Mkqwfz'
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/objects/ef/tmp_obj_a7mWQA'
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/index.lock'
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/index.lock'
+Failed to sync content
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/objects/01/tmp_obj_5KyBff'
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/index.lock'
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/index.lock'
+Failed to sync content
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/objects/2f/tmp_obj_EFR5Hf'
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/HEAD.lock'
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/refs/heads/main.lock'
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/refs/heads/main.lock'
+Failed to sync content
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/AUTO_MERGE.lock'
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/packed-refs.lock'
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/objects/maintenance.lock'
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/refs/remotes/origin/main.lock'
+[Errno 2] No such file or directory: '/Users/songshuang/Desktop/Lora_Tui/.git/refs/remotes/origin/main.lock'
+Failed to sync content
+Detected changes in '/Users/songshuang/Desktop/Lora_Tui/run.py'. Reloading...
+Detected changes in '/Users/songshuang/Desktop/Lora_Tui/run.py'. Reloading...
+[2025-03-13 03:38:10 +0000] [158] [INFO] Handling signal: term
+[2025-03-13 03:38:10 +0000] [158] [INFO] Shutting down: Master
+[2025-03-13 03:38:11 +0000] [246] [INFO] Starting gunicorn 20.1.0
+[2025-03-13 03:38:11 +0000] [246] [INFO] Listening at: http://[::]:8001 (246)
+[2025-03-13 03:38:11 +0000] [246] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2025-03-13 03:38:11 +0000] [247] [INFO] Booting worker with pid: 247
+Running on_start func: app:load_models
+[INFO] Using volume cache for file: /volumes/models/models--ntc-ai--SDXL-LoRA-slider.raw/refs/main
+[INFO] Using volume cache for file: /volumes/models/models--martyn--sdxl-turbo-mario-merge-top-rated/refs/main
+[INFO] Using volume cache for file: /volumes/models/models--martyn--sdxl-turbo-mario-merge-top-rated/blobs/04d5c9e33b7295c5d03d82710bc525e1cd432126e44747ad8aadb6a9bb3ad2b5
+[INFO] Using volume cache for file: /volumes/models/models--martyn--sdxl-turbo-mario-merge-top-rated/blobs/04d5c9e33b7295c5d03d82710bc525e1cd432126e44747ad8aadb6a9bb3ad2b5
+Detected changes in '/Users/songshuang/Desktop/Lora_Tui/run.py'. Reloading...
+Detected changes in '/Users/songshuang/Desktop/Lora_Tui/run.py'. Reloading...
+[2025-03-13 03:38:28 +0000] [246] [INFO] Handling signal: term
+[2025-03-13 03:38:28 +0000] [246] [INFO] Shutting down: Master
+[2025-03-13 03:38:30 +0000] [302] [INFO] Starting gunicorn 20.1.0
+[2025-03-13 03:38:30 +0000] [302] [INFO] Listening at: http://[::]:8001 (302)
+[2025-03-13 03:38:30 +0000] [302] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2025-03-13 03:38:30 +0000] [303] [INFO] Booting worker with pid: 303
+Running on_start func: app:load_models
+[INFO] Using volume cache for file: /volumes/models/models--ntc-ai--SDXL-LoRA-slider.raw/refs/main
+[INFO] Using volume cache for file: /volumes/models/models--martyn--sdxl-turbo-mario-merge-top-rated/refs/main
+[INFO] Using volume cache for file: /volumes/models/models--martyn--sdxl-turbo-mario-merge-top-rated/blobs/04d5c9e33b7295c5d03d82710bc525e1cd432126e44747ad8aadb6a9bb3ad2b5
+[INFO] Using volume cache for file: /volumes/models/models--martyn--sdxl-turbo-mario-merge-top-rated/blobs/04d5c9e33b7295c5d03d82710bc525e1cd432126e44747ad8aadb6a9bb3ad2b5

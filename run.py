@@ -14,6 +14,7 @@ def get_prompt() -> str:
     return prompt
 
 async def main():
+    set_prompt()
     proc = subprocess.Popen(["/usr/local/bin/beam", "serve", "app.py:generate"], start_new_session=True, stdout=open("output.txt", 'w'))
     time.sleep(10)
 
@@ -36,4 +37,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-     

@@ -6,6 +6,8 @@ import json
 import requests
 import asyncio
 
+prompt = ""
+
 def set_prompt() -> None:
     global prompt
     prompt = str(input("Enter the prompt:"))
@@ -25,7 +27,6 @@ async def main():
             if line[:4] == "curl":
                 curl_command += line.strip()    
 
-    proc_curl = await subprocess.run(f"{curl_command}", shell=True, capture_output=True, text=True)
     proc_curl = await asyncio.create_subprocess_shell(
             curl_command,
             stdout=asyncio.subprocess.PIPE,

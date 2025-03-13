@@ -1,67 +1,0 @@
-=> Building image 
-=> Using cached image 
-=> Syncing files 
-Reading .beamignore file
-Collecting files from /Users/songshuang/Desktop/Lora_Tui
-Added /Users/songshuang/Desktop/Lora_Tui/pdm.lock
-Added /Users/songshuang/Desktop/Lora_Tui/run.py
-Added /Users/songshuang/Desktop/Lora_Tui/LICENSE
-Added /Users/songshuang/Desktop/Lora_Tui/.pdm-python
-Added /Users/songshuang/Desktop/Lora_Tui/README.md
-Added /Users/songshuang/Desktop/Lora_Tui/.gitignore
-Added /Users/songshuang/Desktop/Lora_Tui/app.py
-Added /Users/songshuang/Desktop/Lora_Tui/output.txt
-Collected object is 64.43 KB
-=> Uploading 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.4/64.4 kB 0:00:00
-=> Files synced 
-=> Invocation details 
-curl -X POST 'https://c948286d-0b47-4bc5-b455-440054e6d524.app.beam.cloud' \
--H 'Connection: keep-alive' \
--H 'Content-Type: application/json' \
--H 'Authorization: Bearer iW64T_nlU9Q5CJ87oGaaAGRRKvGBu7wHdt61HVd3AXK1o7Djmduijc9ogCoIuu7W8-QH4UZ_eoKPcdwif1CBvA==' \
--d '{}'
-=> Watching '/Users/songshuang/Desktop/Lora_Tui' for changes... 
-Loading image <f44ea7d843893ac5>...
-Loaded image <f44ea7d843893ac5>, took: 7.691057ms
-[2025-03-13 10:27:14 +0000] [10] [INFO] Starting gunicorn 20.1.0
-[2025-03-13 10:27:14 +0000] [10] [INFO] Listening at: http://[::]:8001 (10)
-[2025-03-13 10:27:14 +0000] [10] [INFO] Using worker: uvicorn.workers.UvicornWorker
-[2025-03-13 10:27:14 +0000] [11] [INFO] Booting worker with pid: 11
-The cache for model files in Transformers v4.22.0 has been updated. Migrating your old cache. This is a one-time only operation. You can interrupt this and resume the migration later on by 
-calling `transformers.utils.move_cache()`.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-Running on_start func: app:load_models
-[INFO] Using volume cache for file: /volumes/models/models--ntc-ai--SDXL-LoRA-slider.raw/refs/main
-[INFO] Using volume cache for file: /volumes/models/models--martyn--sdxl-turbo-mario-merge-top-rated/refs/main
-[INFO] Using volume cache for file: /volumes/models/models--martyn--sdxl-turbo-mario-merge-top-rated/blobs/04d5c9e33b7295c5d03d82710bc525e1cd432126e44747ad8aadb6a9bb3ad2b5
-[INFO] Using volume cache for file: /volumes/models/models--martyn--sdxl-turbo-mario-merge-top-rated/blobs/04d5c9e33b7295c5d03d82710bc525e1cd432126e44747ad8aadb6a9bb3ad2b5
-[INFO] Using volume cache for file: /volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/6cc5138ddb67e9309c9b4e058e33e52087f1d215
-Loading pipeline components...:   0% 0/7 [00:00<?, ?it/s][INFO] Using volume cache for file: 
-/volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/e5bc8421e047838523be7acfb6720f167f7382f6
-[INFO] Using volume cache for file: /volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/cde352ada4bb95fdad2fc503b8121257cef215a6
-Loading pipeline components...:  29% 2/7 [00:00<00:00, 16.57it/s][INFO] Using volume cache for file: 
-/volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/da1848b5ed17b676f021578838f12c4023b86379
-[INFO] Using volume cache for file: /volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/2e8612a429492973fe60635b3f44a28b065cfac0
-[INFO] Using volume cache for file: /volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/2e8612a429492973fe60635b3f44a28b065cfac0
-[INFO] Using volume cache for file: /volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/2c2130b544c0c5a72d5d00da071ba130a9800fb2
-[INFO] Using volume cache for file: /volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/469be27c5c010538f845f518c4f5e8574c78f7c8
-[INFO] Using volume cache for file: /volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/76e821f1b6f0a9709293c3b6b51ed90980b3166b
-Loading pipeline components...:  57% 4/7 [00:00<00:00,  5.83it/s][INFO] Using volume cache for file: 
-/volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/a8438e020c4497a429240d6b89e0bf9a6e2ffa92
-[INFO] Using volume cache for file: /volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/a8438e020c4497a429240d6b89e0bf9a6e2ffa92
-[INFO] Using volume cache for file: /volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/ae0c5be6f35217e51c4c000fd325d8de0294e99c
-[INFO] Using volume cache for file: /volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/469be27c5c010538f845f518c4f5e8574c78f7c8
-[INFO] Using volume cache for file: /volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/76e821f1b6f0a9709293c3b6b51ed90980b3166b
-[INFO] Using volume cache for file: /volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/c8714c90f0e2409156da42781954416cb7df36af
-Loading pipeline components...:  86% 6/7 [00:01<00:00,  4.81it/s][INFO] Using volume cache for file: /volumes/models/models--stabilityai--stable-diffusion-xl-base-1.0/blobs/a66a171ba7c8efb1a8fc3bdc64e65318eade8e13
-Loading pipeline components...: 100% 7/7 [00:01<00:00,  4.87it/s]Loading pipeline components...: 100% 7/7 [00:01<00:00,  5.30it/s]
-on_start func complete, took: 27.667810678482056s
-[2025-03-13 10:27:54 +0000] [11] [INFO] Started server process [11]
-[2025-03-13 10:27:54 +0000] [11] [INFO] Waiting for application startup.
-[2025-03-13 10:27:54 +0000] [11] [INFO] Application startup complete.
-[2025-03-13 10:37:08 +0000] [10] [INFO] Handling signal: term
-[2025-03-13 10:37:08 +0000] [10] [INFO] Shutting down: Master
-
-Container was stopped.
-Container was stopped.

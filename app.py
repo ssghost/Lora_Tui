@@ -30,7 +30,6 @@ image = (
 
 CACHE_PATH = "./models"
 MODEL_URL = "https://huggingface.co/martyn/sdxl-turbo-mario-merge-top-rated/blob/main/topRatedTurboxlLCM_v10.safetensors"
-
 LORA_WEIGHT_NAME = "raw.safetensors"
 LORA_REPO = "ntc-ai/SDXL-LoRA-slider.raw"
 
@@ -82,4 +81,5 @@ def generate(context, prompt):
 
     output = Output.from_pil_image(image).save()
     url = output.public_url()
+    
     return {"image": url}

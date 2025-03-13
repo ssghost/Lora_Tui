@@ -25,7 +25,16 @@ async def main():
             if line[:4] == "curl":
                 curl_command += line.strip()    
 
-    image_json = json.loads(await subprocess.run(f"{curl_command}", shell=True, capture_output=True, text=True).stdout)
+    proc_json = await subprocess.run(f"{curl_command}", shell=True, capture_output=True, text=True)
+    proc_json = await asyncio.create_subprocess_shell(
+            curl_command,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+        )
+    stdout, _ = await proc_json.communicate()
+    await proc_json.wait()
+
+    image_json = json.loads(stdout.decode())
     image_url = image_json["image"]
     image_data = await requests.get(image_url).content
     with open("image.jpg", 'wb') as handler:

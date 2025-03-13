@@ -16,7 +16,7 @@ def get_prompt() -> str:
 async def main():
     set_prompt()
     proc = subprocess.Popen(["/usr/local/bin/beam", "serve", "app.py:generate"], start_new_session=True, stdout=open("output.txt", 'w'))
-    time.sleep(10)
+    time.sleep(100)
 
     curl_command = ""
     with open("output.txt", 'r') as f:
@@ -25,7 +25,7 @@ async def main():
             if line[:4] == "curl":
                 curl_command += line.strip()    
 
-    image_json = await json.loads(subprocess.run(f"{curl_command}", shell=True, capture_output=True, text=True).stdout)
+    image_json = json.loads(await subprocess.run(f"{curl_command}", shell=True, capture_output=True, text=True).stdout)
     image_url = image_json["image"]
     image_data = await requests.get(image_url).content
     with open("image.jpg", 'wb') as handler:

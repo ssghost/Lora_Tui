@@ -1,5 +1,6 @@
 from beam import Image, Volume, endpoint, Output, env
 from run import get_prompt
+from typing import Any
 
 if env.is_remote():
     from diffusers import StableDiffusionXLPipeline, EulerAncestralDiscreteScheduler
@@ -33,7 +34,7 @@ MODEL_URL = "https://huggingface.co/martyn/sdxl-turbo-mario-merge-top-rated/blob
 LORA_WEIGHT_NAME = "raw.safetensors"
 LORA_REPO = "ntc-ai/SDXL-LoRA-slider.raw"
 
-def load_models():
+def load_models() -> Any:
     hf_hub_download(repo_id=LORA_REPO, filename=LORA_WEIGHT_NAME, cache_dir=CACHE_PATH)
 
     pipe = StableDiffusionXLPipeline.from_single_file(
@@ -55,7 +56,7 @@ def load_models():
     gpu="A100-40",
     volumes=[Volume(name="models", mount_path=CACHE_PATH)],
 )
-def generate(context, prompt):
+def generate(context, prompt) -> Any:
     prompt = get_prompt()
 
     pipe = context.on_start_value

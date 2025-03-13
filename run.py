@@ -9,7 +9,7 @@ import asyncio
 async def main():
     global prompt
     prompt = str(input("Enter the prompt:"))
-    proc = subprocess.Popen(["/usr/local/bin/beam", "serve", "app.py:generate", ">", "output.txt"], start_new_session=True)
+    proc = subprocess.Popen(["/usr/local/bin/beam", "serve", "app.py:generate"], start_new_session=True, stdout=open("output.txt", 'w'))
     time.sleep(10)
 
     with open("output.txt", 'r') as f:

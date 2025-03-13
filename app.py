@@ -1,5 +1,5 @@
 from beam import Image, Volume, endpoint, Output, env
-from run import get_prompt
+import run
 from typing import Any
 
 if env.is_remote():
@@ -56,9 +56,7 @@ def load_models() -> Any:
     gpu="A100-40",
     volumes=[Volume(name="models", mount_path=CACHE_PATH)],
 )
-def generate(context, prompt) -> Any:
-    prompt = get_prompt()
-
+def generate(context, prompt= run.get_prompt()) -> Any:
     pipe = context.on_start_value
     pipe.enable_sequential_cpu_offload()
     pipe.enable_attention_slicing("max")

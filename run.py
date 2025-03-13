@@ -6,9 +6,11 @@ import json
 import requests
 import asyncio
 
-def get_prompt() -> str:
+def set_prompt() -> None:
     global prompt
     prompt = str(input("Enter the prompt:"))
+
+def get_prompt() -> str:
     return prompt
 
 async def main():

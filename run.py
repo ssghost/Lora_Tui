@@ -6,9 +6,12 @@ import json
 import requests
 import asyncio
 
-async def main():
+def get_prompt() -> str:
     global prompt
     prompt = str(input("Enter the prompt:"))
+    return prompt
+
+async def main():
     proc = subprocess.Popen(["/usr/local/bin/beam", "serve", "app.py:generate"], start_new_session=True, stdout=open("output.txt", 'w'))
     time.sleep(10)
 

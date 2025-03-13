@@ -1,5 +1,5 @@
 from beam import Image, Volume, endpoint, Output, env
-from run import prompt
+from run import get_prompt
 
 if env.is_remote():
     from diffusers import StableDiffusionXLPipeline, EulerAncestralDiscreteScheduler
@@ -8,7 +8,6 @@ if env.is_remote():
     from safetensors.torch import load_file
     import os
     import uuid
-
 
 image = (
     Image(python_version="python3.9")
@@ -35,7 +34,6 @@ MODEL_URL = "https://huggingface.co/martyn/sdxl-turbo-mario-merge-top-rated/blob
 LORA_WEIGHT_NAME = "raw.safetensors"
 LORA_REPO = "ntc-ai/SDXL-LoRA-slider.raw"
 
-
 def load_models():
     hf_hub_download(repo_id=LORA_REPO, filename=LORA_WEIGHT_NAME, cache_dir=CACHE_PATH)
 
@@ -48,7 +46,6 @@ def load_models():
 
     return pipe
 
-
 @endpoint(
     name="sd-lora",
     image=image,
@@ -59,12 +56,12 @@ def load_models():
     gpu="A100-40",
     volumes=[Volume(name="models", mount_path=CACHE_PATH)],
 )
-def generate(context, prompt=prompt):
-    pipe = context.on_start_value
+def generate(context, prompt):
+    prompt = get_prompt()
 
+    pipe = context.on_start_value
     pipe.enable_sequential_cpu_offload()
     pipe.enable_attention_slicing("max")
-
     pipe.scheduler = EulerAncestralDiscreteScheduler.from_config(pipe.scheduler.config)
 
     adapter_name = f"raw_{uuid.uuid4().hex}"

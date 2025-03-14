@@ -1,0 +1,8 @@
+Update Required
+
+Your current version: 0.2.138
+Minimum required version: 0.2.148
+
+Please upgrade to the latest version.
+  pip install --upgrade beam-client
+

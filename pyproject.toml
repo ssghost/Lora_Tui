@@ -5,7 +5,7 @@ description = "Default template for PDM package"
 authors = [
     {name = "ssghost", email = "ssprof0@gmail.com"},
 ]
-dependencies = ["beam-client>=0.2.146"]
+dependencies = ["beam-client>=0.2.146", "pip>=25.0.1"]
 requires-python = "==3.13.*"
 readme = "README.md"
 license = {text = "MIT"}

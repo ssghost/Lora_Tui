@@ -1,4 +1,3 @@
-from app import *
 import subprocess
 import time
 import signal
@@ -7,19 +6,36 @@ import json
 import requests
 import asyncio
 
-async def main():
+prompt = ""
+
+def set_prompt() -> None:
     global prompt
     prompt = str(input("Enter the prompt:"))
-    proc = subprocess.run(f"beam serve app.py:generate(prompt={prompt}) > output.txt", shell=True)
-    time.sleep(10)
 
+def get_prompt() -> str:
+    return prompt
+
+async def main():
+    set_prompt()
+    proc = subprocess.Popen(["./.venv/lib/python3.13/site-packages/beam", "serve", "app.py:generate"], start_new_session=True, stdout=open("output.txt", 'w'))
+    time.sleep(100)
+
+    curl_command = ""
     with open("output.txt", 'r') as f:
         lines = f.readlines()
         for line in lines:
             if line[:4] == "curl":
-                curl_command = line.strip()    
+                curl_command += line.strip()    
 
-    image_json = await json.loads(subprocess.run(f"{curl_command}", capture_output=True, text=True).stdout)
+    proc_curl = await asyncio.create_subprocess_shell(
+            curl_command,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+        )
+    stdout, _ = await proc_curl.communicate()
+    await proc_curl.wait()
+
+    image_json = json.loads(stdout.decode())
     image_url = image_json["image"]
     image_data = await requests.get(image_url).content
     with open("image.jpg", 'wb') as handler:
@@ -31,5 +47,4 @@ async def main():
     os.killpg(os.getpgid(proc), signal.SIGTERM)
 
 if __name__ == "__main__":
-    asyncio.run(main)
-     
+    asyncio.run(main())
